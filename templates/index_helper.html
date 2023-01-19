@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Indent Prediction</title>
+    <style>
+        /* Responsive design */
+        @media (max-width: 600px) {
+            form {
+                width: 100%;
+            }
+        }
+
+        /* Styling */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.2); /* Light blue background */
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
+            transition: all 0.2s ease-in-out; /* Add transition */
+        }
+
+        nav a:hover {
+            color: #ccc;
+            background-color: #00bfff; /* Change background color */
+            padding: 10px 20px; /* Add padding */
+            border-radius: 5px; /* Add border radius */
+            transform: scale(1.1); /* Add scale transformation */
+            box-shadow: 0 0 10px #ccc; /* Add box shadow */
+        }
+
+
+        /* Form */
+        form {
+            width: 50%;
+            margin: 80px auto; /* Space between navbar and form */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .popup {
+            visibility: hidden; /* Hide by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* Show the popup when '/submit' is returned */
+        .show-popup {
+            visibility: visible;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .popup p {
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #45a049;
+        }
+
+        body {
+            background-color: lightseagreen; /* light background color */
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+    <form action="/submit" method="post" onsubmit="showPopup()">
+        <label for="input1">Enter Center:</label>
+        <input type="text" id="input1" placeholder="Center Name" name="input1">
+
+        <label for="input2">Enter Start Date :</label>
+        <input type="text" id="input2" placeholder="DD-MM-YYYY" name="input2">
+
+        <label for="input3">Enter End Date :</label>
+        <input type="text" id="input3" placeholder="DD-MM-YYYY" name="input3">
+
+        <input type="submit" value="Submit">
+    </form>
+    <div action="/" class="popup" id="popup">
+        <h2>Success</h2>
+        <p>Prediction Done</p>
+        <button onclick="document.getElementById('popup').style.visibility='hidden'">Close</button>
+    </div>
+
+    <script>
+        // Show the popup when '/submit' is returned
+        document.getElementById('popup').classList.add('show-popup');
+    </script>
+</body>
+
+</html>
