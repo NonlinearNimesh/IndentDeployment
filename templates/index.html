@@ -99,6 +99,7 @@
     <nav>
         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
             <a href="/">Home</a>
+            <a href="/prediction">Prediction</a>
         </div>
     </nav>
     <form action="/submit" method="post">
@@ -111,8 +112,16 @@
         <label for="input3">Enter End Date :</label>
         <input type="text" id="input3" placeholder="DD-MM-YYYY" name="input3">
 
-        <input type="submit" value="Submit">
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <form action="/prediction" method="post">
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <input type="submit" value="Click Here to Calculate the Prediction of records Present in Database">
+        </div>
     </form>
 </body>
 
 </html>
+
