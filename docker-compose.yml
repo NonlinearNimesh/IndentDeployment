@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  redis:
+    image: redis:alpine3.12
+    container_name: nimesh-redis
+    ports: [ "6379:6379" ]
+
+  docker_ops:
+    image: indent_deployment:v1.1
+    container_name: nimesh-docker-ops
+    command: python -m celery -A main worker --concurrency 1 -Q queue_others
+    depends_on:
+      - redis

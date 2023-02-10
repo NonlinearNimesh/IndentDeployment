@@ -103,8 +103,11 @@
         </div>
     </nav>
     <form action="/submit" method="post">
-        <label for="input1">Enter Center:</label>
+        <label for="input1">Enter start Center:</label>
         <input type="text" id="input1" placeholder="Center Name" name="input1">
+
+        <label for="input4">Enter End Center:</label>
+        <input type="text" id="input4" placeholder="Center Name" name="input4">
 
         <label for="input2">Enter Start Date :</label>
         <input type="text" id="input2" placeholder="DD-MM-YYYY" name="input2">
@@ -112,6 +115,14 @@
         <label for="input3">Enter End Date :</label>
         <input type="text" id="input3" placeholder="DD-MM-YYYY" name="input3">
 
+        <h3 style="text-align: center;">Get data on the basis of:</h3>
+        <div style="display: flex; justify-content: center;">
+            <input type="radio" id="date" name="criteria" value="date">
+            <label for="date">Date</label>
+            <input type="radio" id="center" name="criteria" value="center">
+            <label for="center">Center</label>
+        </div>
+        <br>
         <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
             <input type="submit" value="Submit">
         </div>

@@ -80,3 +80,5 @@ def get_prediction(df):
             import traceback
             print(traceback.format_exc())
             return "failed"
+
+

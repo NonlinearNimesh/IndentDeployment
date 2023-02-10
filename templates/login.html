@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Add a background color to the entire page */
+    body {
+        background-color: #36454f;
+        color: #333;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Style the form container */
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Style the form elements */
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px #ccc;
+        width: 80%;
+        /* Add this line to make the form responsive */
+        max-width: 400px;
+    }
+
+    /* Style the input fields */
+    input[type=text], input[type=password] {
+        background-color: #f2f2f2;
+        color: #333;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    /* Style the submit button */
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 50%;
+    }
+
+    /* Style the labels */
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* Style the register button */
+    input[type=button] {
+        background-color: #F44336;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 50%;
+        /* Add a register button to the right */
+        float: right;
+    }
+
+    /* Responsive layout - make the form stack on top of each other */
+    @media (max-width: 600px) {
+        form {
+            flex-direction: column;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <form action="/login" method="post">
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Submit" onclick="window.location.href = 'index.html';">
+    <input type="button" value="Register" onclick="window.location.href = '/logintoregister';">
+  </form>
+</div>
+
+</body>
+</html>
